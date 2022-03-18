@@ -31,3 +31,6 @@ $RECYCLE.BIN/
 # Husky
 .husky
 package-lock.json
+
+#slds
+src/SLDS
