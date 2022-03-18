@@ -5,6 +5,7 @@
  */
 
 import { LightningElement, /* wire */} from 'lwc';
+import { HERO_DATA } from "./mockHeroData";
 // import { getHeroInfo } from "@salesforce/apex/HeroInfoHelper.getHeroInfo";
 
 export default class PortfolioHub_HeroInfoComponent extends LightningElement {
@@ -16,7 +17,9 @@ export default class PortfolioHub_HeroInfoComponent extends LightningElement {
     profileImgSrc;              // Url to profile image resource    (Job__c.User__r.MediumPhotoUrl)
     heroName;                   // Name to display                  (Job__c.User__r.Name)
     heroTitle;                  // Prospective job title            (Job__c.Name)
-    approvalStatus;      // TODO: Status of submitted portfolio (3 states)
+
+    // Status of submitted portfolio (3 states)
+    approvalStatus;
     isApproved;
     isRejected;
     isPending = this.isRejected && this.isApproved;
@@ -29,7 +32,8 @@ export default class PortfolioHub_HeroInfoComponent extends LightningElement {
      *      (portfolio approval status)
      * 
      * SOQL: 
-     *  [SELECT Name,User__r.MediumPhotoUrl,User__r.Name FROM Job__c]
+     *  [SELECT Name,Title,Picture,CaseId FROM Contact]
+     *  [SELECT Status FROM Case WHERE CaseId =: ]
      */
     // @wire(getHeroInfo) 
     heroInfo({ error, data }) {
@@ -37,11 +41,16 @@ export default class PortfolioHub_HeroInfoComponent extends LightningElement {
             this.error = error;
             // TODO: Handle error
         }
+        
+
+        // DEBUG --- MOCK --- REMOVE ME
+        data = HERO_DATA;
+        // DEBUG --- MOCK --- REMOVE ME
 
         // If there's no error, data will be returned
-        this.profileImgSrc  = data.ProfileImgSrc;
         this.heroName       = data.Name;
         this.heroTitle      = data.Title;
+        this.profileImgSrc  = data.Picture;
         this.approvalStatus = data.ApprovalStatus;
     }
 
@@ -51,11 +60,11 @@ export default class PortfolioHub_HeroInfoComponent extends LightningElement {
             this.isApproved = false;
             this.isRejected = false;
             return;
-        } 
+        }
+
         if (this.data.ApprovalStatus === 'Approved') {
             this.isApproved = true;
             this.isRejected = false;
         }
-        
     }
 }
