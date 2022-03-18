@@ -1,0 +1,24 @@
+@media screen and (max-width: 900px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: var(--lwc-sizeLarge);
+        height: var(--lwc-sizeLarge);
+    }
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-container {
+    width: var(--lwc-sizeSmall);
+    height: var(--lwc-sizeSmall);
+}
+
+img {
+    margin: 0;
+}
