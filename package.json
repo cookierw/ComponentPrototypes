@@ -36,6 +36,7 @@
         "watch": "lwc-services watch"
     },
     "devDependencies": {
+        "@lwc/synthetic-shadow": "^2.11.3",
         "eslint": "^7.32.0",
         "eslint-plugin-inclusive-language": "^2.2.0",
         "husky": "^7.0.4",

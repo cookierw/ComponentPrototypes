@@ -36,33 +36,33 @@ export default class PortfolioHub_HeroInfoComponent extends LightningElement {
      *  [SELECT Status FROM Case WHERE CaseId =: ]
      */
     // @wire(getHeroInfo) 
-    heroInfo({ error, data }) {
-        if (error) {
-            this.error = error;
-            // TODO: Handle error
-        }
+    // heroInfo({ error, data }) {
+    //     if (error) {
+    //         this.error = error;
+    //         // TODO: Handle error
+    //     }
+    // If there's no error, data will be returned
+    connectedCallback() {
+
         
-
-        // DEBUG --- MOCK --- REMOVE ME
-        data = HERO_DATA;
-        // DEBUG --- MOCK --- REMOVE ME
-
-        // If there's no error, data will be returned
-        this.heroName       = data.Name;
-        this.heroTitle      = data.Title;
-        this.profileImgSrc  = data.Picture;
-        this.approvalStatus = data.ApprovalStatus;
+        // DEBUG --- MOCK --- REFACTOR ME
+        this.heroName       = HERO_DATA.Name;
+    
+        this.heroTitle      = HERO_DATA.Title;
+        this.profileImgSrc  = HERO_DATA.Picture;
+        this.approvalStatus = HERO_DATA.ApprovalStatus;
+        this.setApprovalState(HERO_DATA.ApprovalStatus);
     }
 
     // Helper to set bools representing approval state
-    setApprovalState() {
-        if (!this.data.ApprovalStatus || this.data.ApprovalStatus === "Pending") {
+    setApprovalState(data) {
+        if (!data || data.ApprovalStatus === "Pending") {
             this.isApproved = false;
             this.isRejected = false;
             return;
         }
 
-        if (this.data.ApprovalStatus === 'Approved') {
+        if (data.ApprovalStatus === 'Approved') {
             this.isApproved = true;
             this.isRejected = false;
         }
