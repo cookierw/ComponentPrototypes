@@ -9,20 +9,11 @@
         <div class="list-body">
             <template for:each={list} for:item="rowItem">
                 <!-- Replace div with reusable row component -->
-                <div key={rowItem.Id} class="row">
-                    <!-- Display the data -->
-                    <div class="info-section">
-                        <!-- Icon -->
-                        <span class="row-item-icon">Icon</span>
-                        <!-- Headline (Role/Degree) -->
-                        <div class="row-item-headline">{rowItem.Name}</div>
-                        <!-- Detail about Headline (Employer/College) -->
-                        <div class="row-item-detail">{rowItem.Detail}</div>
-                    </div>
-                    <div class="date-section">
-                        <p>{rowItem.Date}</p>
-                    </div>
-                </div>
+                <my-row-item 
+                    key={rowItem.Id}
+                    record={rowItem} 
+                    type={type}
+                ></my-row-item>
             </template>
         </div>
     </div>
