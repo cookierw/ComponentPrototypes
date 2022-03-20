@@ -1,0 +1,29 @@
+
+/* Variables */
+
+/* Main outer element */
+.container {
+    background-color: blanchedalmond;
+}
+
+/* Title, add button at top of component */
+.heading {
+    display: flex;
+}
+
+/* List of items element */
+.list-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Represents a single row */
+.row {
+    background-color: aliceblue;
+}
+
+/* Credit to Mountain Scott */
+/* Alternate BG color each row */
+.rowbg:nth-child(2n){
+    background-color: black;
+}
