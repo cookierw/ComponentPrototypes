@@ -5,11 +5,13 @@
 .container {
     background-color: rgb(230, 144, 14);
     width: var(--component-width);
+    padding: var(--space-small);
 }
 
 /* Title, add button at top of component */
 .heading {
     display: flex;
+    margin-bottom: var(--space-small);
 }
 
 /* List of items element */
@@ -26,7 +28,7 @@
     border-radius: calc(var(--));
 }
 
-/* Credit to Mountain Scott */
+/* Inspiration from Mountain Scott */
 /* Alternate BG color each row */
 .rowbg:nth-child(2n){
     background-color: rgb(201, 65, 65);
