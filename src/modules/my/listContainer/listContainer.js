@@ -4,7 +4,10 @@ import { LightningElement, api, track } from 'lwc';
 
 export default class ListContainer extends LightningElement {
 
-    @track list;
+    @track list;                // List of records to display
+    editingId;                  // RecordId selected for editing
+    isEditing = false;          // Edit form visibility
+    isCreating = false;         // Create form visibility
 
     get type() {
         // Implemented types:
@@ -12,32 +15,32 @@ export default class ListContainer extends LightningElement {
         return this._type;
     }                    
     
-    // List of records to display
+    // Type of records we're displaying
+    // This is where you can add your own types
     @api set type(input) {
         switch (input) {
             case 'Education':
                 this._type = input;
                 break;
             case 'Experience':
+                // Set object type for 
                 this._type = input;
                 break;
             default:
                 console.log('Unsupported list type: ' + input)
                 break;
         }
-    }                      
-    isEditing = false;          // 
-    isCreating = false;         // 
-    editingId;                  // RecordId selected for editing
+    }
 
     connectedCallback() {
         this.list = getMockData(5);
         console.log(this.list);
     }
+
     /**
      *  Wire service method that passes in 'type' and retrieves list of that obj
      */
-    // @wire(getListOf, { type: this.-type })
+    // @wire(getListOf, { type: this._type })
     getList({ error, data }) {
         if (error) {
             // Handle error
