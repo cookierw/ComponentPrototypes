@@ -6,6 +6,8 @@
     /* Padding, margin, other distances */
     --space-xsmall: 1em;
     --space-small: 2em;
+    --component-width: 60vw;
+    --list-row-height: 6em;
 
     /* Colors/Branding */
 }

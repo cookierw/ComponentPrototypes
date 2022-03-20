@@ -1,9 +1,10 @@
-
 /* Variables */
+@import 'my/styleResource';
 
 /* Main outer element */
 .container {
-    background-color: blanchedalmond;
+    background-color: rgb(230, 144, 14);
+    width: var(--component-width);
 }
 
 /* Title, add button at top of component */
@@ -19,11 +20,25 @@
 
 /* Represents a single row */
 .row {
-    background-color: aliceblue;
+    display: flex;
+    background-color: rgb(40, 106, 163);
+    height: var(--list-row-height);
+    border-radius: calc(var(--));
 }
 
 /* Credit to Mountain Scott */
 /* Alternate BG color each row */
 .rowbg:nth-child(2n){
-    background-color: black;
+    background-color: rgb(201, 65, 65);
+}
+
+.info-section, .date-section {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.info-section {
+    flex-direction: column;
+    justify-content: end;
 }
