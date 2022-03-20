@@ -2,7 +2,9 @@
     <div class="container">
         <div class="heading">
             <div class="title"></div>
+            <button class="new-record-button" onclick={handleCreateRecordButton}></button>
         </div>
+        <!-- List container -->
         <div class="list-body">
             <template for:each={list} for:item="rowItem">
                 <!-- Replace div with reusable row component -->
@@ -10,14 +12,14 @@
                     <!-- Display the data -->
                     <div class="info-section">
                         <!-- Icon -->
-                        <span class="row-item-icon">Ic</span>
+                        <span class="row-item-icon">Icon</span>
                         <!-- Headline (Role/Degree) -->
-                        <div class="row-item-headline">SOFTWARE DEVELOPER</div>
+                        <div class="row-item-headline">{rowItem.Name}</div>
                         <!-- Detail about Headline (Employer/College) -->
-                        <div class="row-item-detail">Revature, LLC</div>
+                        <div class="row-item-detail">{rowItem.Detail}</div>
                     </div>
                     <div class="date-section">
-                        <p>TEST DATE HERE</p>
+                        <p>{rowItem.Date}</p>
                     </div>
                 </div>
             </template>
