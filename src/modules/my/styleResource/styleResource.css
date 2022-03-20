@@ -1,0 +1,11 @@
+* {
+    /* Profile photo */
+    --photo-small: 12em;
+    --photo-large: 18em;
+
+    /* Padding, margin, other distances */
+    --space-xsmall: 1em;
+    --space-small: 2em;
+
+    /* Colors/Branding */
+}
