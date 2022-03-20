@@ -1,0 +1,23 @@
+<template>
+    <!-- Reusable row component -->
+    <div key={rowItem.Id} class="row">
+        <!-- Display the data -->
+        <div class="info-section">
+            <!-- Icon -->
+            <span class="row-item-icon">Icon</span>
+            <!-- Headline (Role/Degree) -->
+            <div class="row-item-headline">{rowItem.Name}</div>
+            <!-- Detail about Headline (Employer/College) -->
+            <div class="row-item-detail">{rowItem.Detail}</div>
+        </div>
+        <div class="date-section">
+            <div class="date-container">
+                <p>{rowItem.Date}</p>
+            </div>
+            <div class="action-container">
+                <!-- Edit button -->
+                <button onclick={handleEditRecordEvent} class="edit-button"></button>
+            </div>
+        </div>
+    </div>
+</template>
