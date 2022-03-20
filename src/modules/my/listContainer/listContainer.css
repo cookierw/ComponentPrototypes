@@ -11,26 +11,33 @@
 /* Title, add button at top of component */
 .heading {
     display: flex;
+    justify-content: flex-start;
     margin-bottom: var(--space-small);
+}
+
+.heading .actions {
+    margin-left: auto;
 }
 
 /* List of items element */
 .list-body {
     display: flex;
     flex-direction: column;
+    background-color: blueviolet;
 }
 
 /* Represents a single row */
 .row {
     display: flex;
+    margin: calc(var(--space-xsmall)/4);
     background-color: rgb(40, 106, 163);
     height: var(--list-row-height);
-    border-radius: calc(var(--));
+    border-radius: var(--space-xsmall);
 }
 
 /* Inspiration from Mountain Scott */
 /* Alternate BG color each row */
-.rowbg:nth-child(2n){
+.row:nth-child(2n){
     background-color: rgb(201, 65, 65);
 }
 
