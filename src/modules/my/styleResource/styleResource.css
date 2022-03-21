@@ -14,4 +14,7 @@
     --color-secondary: #E7FFFE;
     --color-ternary: #D7EFEE;
     --color-accent: #576464;
+
+    /* Fonts */
+    --font-size-heading: 3em;
 }

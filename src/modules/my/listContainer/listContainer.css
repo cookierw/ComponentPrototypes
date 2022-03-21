@@ -3,15 +3,21 @@
 
 /* Main outer element */
 .container {
-    background-color: var(--color-primary);
     width: var(--component-width);
+    background-color: var(--color-primary);
 }
 
 /* Title, add button at top of component */
 .heading {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: var(--space-small);
+    align-items: center;
+    height: var(--list-row-height);
+    padding: var(--space-small);
+}
+
+.title p {
+    font-size: var(--font-size-heading);
 }
 
 .heading .actions {

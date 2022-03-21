@@ -4,17 +4,22 @@
 /* Represents a single row */
 .row {
     display: flex;
-    margin: calc(var(--space-xsmall)/4);
     height: var(--list-row-height);
+    margin: calc(var(--space-xsmall)/4);
+    padding: var(--space-xsmall);
 }
 
 .info-section, .date-section {
-    width: 50%;
     display: flex;
     justify-content: end;
+    width: 50%;
 }
 
 .info-section {
     flex-direction: column;
-    justify-content: end;
+    align-items: flex-end;
+}
+
+.row-item-headline {
+    
 }
