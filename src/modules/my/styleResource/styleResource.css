@@ -10,4 +10,8 @@
     --list-row-height: 6em;
 
     /* Colors/Branding */
+    --color-primary: #ffffff;
+    --color-secondary: #E7FFFE;
+    --color-ternary: #D7EFEE;
+    --color-accent: #576464;
 }

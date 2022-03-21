@@ -3,9 +3,8 @@
 
 /* Main outer element */
 .container {
-    background-color: rgb(230, 144, 14);
+    background-color: var(--color-primary);
     width: var(--component-width);
-    padding: var(--space-small);
 }
 
 /* Title, add button at top of component */
@@ -23,31 +22,13 @@
 .list-body {
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
+    background-color: none;
 }
 
-/* Represents a single row */
-.row {
-    display: flex;
-    margin: calc(var(--space-xsmall)/4);
-    background-color: rgb(40, 106, 163);
-    height: var(--list-row-height);
-    border-radius: var(--space-xsmall);
+.row-item {
+    background-color: var(--color-secondary);
 }
 
-/* Inspiration from Mountain Scott */
-/* Alternate BG color each row */
-.row:nth-child(2n){
-    background-color: rgb(201, 65, 65);
-}
-
-.info-section, .date-section {
-    width: 50%;
-    display: flex;
-    justify-content: end;
-}
-
-.info-section {
-    flex-direction: column;
-    justify-content: end;
+.row-item:nth-child(2n) {
+    background-color: var(--color-ternary);
 }

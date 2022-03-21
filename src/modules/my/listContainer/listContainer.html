@@ -1,15 +1,19 @@
 <template>
     <div class="container">
         <div class="heading">
-            <div class="title"></div>
-            <div class="actions"></div>
-            <button class="new-record-button" onclick={handleCreateRecordButton}></button>
+            <div class="title">
+                <p>{type}</p>
+            </div>
+            <div class="actions">
+                <button class="new-record-button" onclick={handleCreateRecordButton}></button>
+            </div>
         </div>
         <!-- List container -->
         <div class="list-body">
             <template for:each={list} for:item="rowItem">
                 <!-- Replace div with reusable row component -->
                 <my-row-item 
+                    class="row-item"
                     key={rowItem.Id}
                     record={rowItem} 
                     type={type}

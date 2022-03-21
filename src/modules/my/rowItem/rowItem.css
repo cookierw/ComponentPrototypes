@@ -5,15 +5,7 @@
 .row {
     display: flex;
     margin: calc(var(--space-xsmall)/4);
-    background-color: rgb(40, 106, 163);
     height: var(--list-row-height);
-    border-radius: var(--space-xsmall);
-}
-
-/* Inspiration from Mountain Scott */
-/* Alternate BG color each row */
-.row:nth-child(2n){
-    background-color: rgb(201, 65, 65);
 }
 
 .info-section, .date-section {
