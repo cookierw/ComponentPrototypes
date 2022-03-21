@@ -18,12 +18,12 @@ export default class ListContainer extends LightningElement {
     // Type of records we're displaying
     // This is where you can add your own types
     @api set type(input) {
+        // Sanity check on strings
         switch (input) {
             case 'Education':
                 this._type = input;
                 break;
             case 'Experience':
-                // Set object type for 
                 this._type = input;
                 break;
             default:
